@@ -14,7 +14,7 @@ let
 
   linux_arch =
     if arch == "i686" || arch == "x86_64" then "x86"
-    else if arch == "armv6" || arch == "armv7" then "arm"
+    else if arch == "armv6" || arch == "armv7" || arch == "aarch64" then "arm"
     else throw "not sure what Linux architecture code to use";
 
   headers = nixpkgs.stdenv.mkDerivation rec {
