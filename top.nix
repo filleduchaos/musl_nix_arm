@@ -16,12 +16,11 @@ rec {
     armv7-linux-musl = import ./linux {
       inherit native;
       arch = "armv7";
-      gcc_options = "--with-fpu=neon --with-float=hard ";
+      gcc_options = "--with-fpu=vfp --with-float=hard ";
     };
     aarch64-linux-musl = import ./linux {
       inherit native;
       arch = "aarch64";
-      gcc_options = "--with-fpu=neon --with-float=hard ";
     };
   };
 
@@ -29,8 +28,8 @@ rec {
 
   # Sets of packages for each target system.
   armv6-linux-musl = pkgFun crossenvs.armv6-linux-musl;
-  armv7-linux-musl = pkgFun crossenvs.armv6-linux-musl;
-  aarch64-linux-musl = pkgFun crossenvs.armv6-linux-musl;
+  armv7-linux-musl = pkgFun crossenvs.armv7-linux-musl;
+  aarch64-linux-musl = pkgFun crossenvs.aarch64-linux-musl;
 
   # Handy aliases.
   rpi = armv6-linux-musl;
