@@ -8,10 +8,10 @@ default: build
 build:
 	docker build -t $(IMAGE):$(TAG) -t $(IMAGE):latest .
 
-push:
+push: build
 	docker push $(IMAGE)
 
-run:
+run: build
 	docker run --rm -it $(IMAGE) /bin/bash
 
 release: build push

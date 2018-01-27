@@ -2,3 +2,5 @@
 .release
 Dockerfile
 Makefile
+example/
+README.md

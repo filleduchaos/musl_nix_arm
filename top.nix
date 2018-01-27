@@ -32,6 +32,9 @@ rec {
   aarch64-linux-musl = pkgFun crossenvs.aarch64-linux-musl;
 
   # Handy aliases.
+  armv6 = armv6-linux-musl;
+  armv7 = armv7-linux-musl;
+  aarch64 = aarch64-linux-musl;
   rpi = armv6-linux-musl;
   rpi2 = armv7-linux-musl;
   rpi3 = aarch64-linux-musl;
